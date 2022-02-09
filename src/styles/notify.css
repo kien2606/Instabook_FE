@@ -1,0 +1,70 @@
+.notify_display {
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  text-decoration: none;
+}
+.notify_display:hover {
+  background-color: #eee;
+}
+.notify_left {
+  display: flex;
+  align-items: center;
+}
+.notify_left img {
+  height: 45px;
+  width: 45px;
+  border-radius: 100px;
+}
+.notify_left_info {
+  margin-left: 16px;
+}
+.notify_left_info_header {
+  display: flex;
+  color: black;
+  font-weight: 500;
+}
+.notify_right {
+  display: flex;
+  align-self: flex-start;
+  margin-top: 10px;
+  margin-left: 16px;
+}
+.notify_sign {
+  background-color: #006bffd4;
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+}
+.notify_left_info_time {
+  font-size: 13px;
+  color: gray;
+}
+.notify_title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+.title_left {
+  font-weight: 500;
+  font-size: 25px;
+}
+.title_right button {
+  border: none;
+  background-color: #fff;
+  color: teal;
+  cursor: pointer;
+}
+.new_notify {
+  width: 93.5%;
+  display: flex;
+  justify-content: flex-end;
+}
+.new_notify_sign {
+  width: 5px;
+  height: 5px;
+  border-radius: 100px;
+  background-color: crimson;
+}

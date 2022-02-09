@@ -1,0 +1,36 @@
+.main_box {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_box form {
+  background-color: #fff;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 50px 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+.title_typography {
+  display: flex;
+  justify-content: center;
+}
+.check_member_box {
+  display: flex;
+}
+
+/*Iphone(480 x 640)*/
+@media screen and (min-width: 320px) {
+  .main_box form {
+    max-width: 400px;
+  }
+}

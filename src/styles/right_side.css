@@ -1,0 +1,100 @@
+.right_side {
+  flex: 0.3;
+  margin-top: 32px;
+  margin-left: 24px;
+}
+.right_side_bar {
+  position: sticky;
+  top: 20%;
+}
+/* --------------------------------------------- use card----------------------------------------- */
+.user_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.user_card_left {
+  display: flex;
+  align-items: center;
+}
+.big_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.small_avatar {
+  width: 40px;
+  border-radius: 100%;
+  height: 40px;
+}
+.user_card_info {
+  margin-left: 16px;
+}
+.user_card_info a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+.user_card_info a:hover {
+  text-decoration: underline;
+}
+.user_card_info p:first-child {
+  color: black;
+  font-weight: 500;
+}
+.user_card_info p {
+  color: rgb(142, 142, 142);
+  font-size: 13px;
+}
+.user_card_right a {
+  border: none;
+  background-color: #fafafa;
+  color: #1976d2;
+  font-weight: 450;
+  text-decoration: none;
+  font-size: 14px;
+}
+.suggestion_btn {
+  border: none !important;
+  padding: 0 !important;
+  text-align: right !important;
+  text-transform: capitalize !important;
+  justify-content: flex-end !important;
+}
+
+/* ----------------------------------------side_bar_user_suggestion------------------------------- */
+.side_bar_user_suggestion {
+  margin-top: 32px;
+}
+.suggestion_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.suggestion_header p {
+  color: #8e8e8e;
+  font-weight: 500;
+  font-size: 15px;
+}
+.suggestion_header a {
+  border: none;
+  background-color: #fafafa;
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px;
+}
+/* ---------------------------------------------right_side_bar_copyright------------------------------------- */
+.right_side_bar_copyright {
+  font-size: 12px;
+  margin-top: 16px;
+  color: rgb(142, 142, 142);
+}
+.info_author a {
+  text-decoration: none;
+  color: rgb(142, 142, 142);
+}
+.info_copyright {
+  margin-top: 16px;
+}

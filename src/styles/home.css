@@ -1,0 +1,77 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.wrapper_main_interact {
+  flex: 0.6;
+}
+/* -------------------- status ---------------------- */
+.status {
+  box-shadow: 0 0 5px #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 24px;
+  background-color: #fff;
+}
+.status_top {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 16px;
+}
+
+.status_top button {
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  color: #555;
+  padding: 0 10px;
+  margin: 0 10px;
+  width: 90%;
+  text-align: left;
+}
+.status button:hover {
+  background-color: #ddd;
+}
+.status_bottom {
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.status_bottom div {
+  display: flex;
+  align-items: center;
+}
+.btn_open_status {
+  margin-right: 8px;
+}
+.wrap_btn_status_open {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.wrap_btn_status_open:hover {
+  background-color: #e6e6e6;
+  border-radius: 5px;
+}
+/* ------------------------------------------------------- */
+
+/* ------------------------------RESPONSIVE ------------------------- */
+
+@media (max-width: 768px) {
+  .status {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .posts {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .slide_images {
+    height: 350px !important;
+    width: 100% !important;
+  }
+}
+
