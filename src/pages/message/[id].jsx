@@ -20,7 +20,7 @@ function Conversation() {
     if (value && responseData.token) {
       getDataApi(`search?username=${value}`, responseData.token)
         .then((res) => {
-          setUsersSearch(res.data.users);
+          setUsersSearch( res.data.users.filter((user) => user._id !== responseData.user._id));
         })
         .catch((error) => console.log(error.response.data.msg));
     } else {

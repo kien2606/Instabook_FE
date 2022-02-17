@@ -3,11 +3,10 @@ import { authSelector, setUser } from "./features/auth/authSlice";
 import { rtCreateNotify, rtDeleteNotify } from "./features/notify/notifySlice";
 import { useDispatch, useSelector } from "react-redux";
 
+import { addMessage } from "./features/message/messageSlice";
 import { socketSelector } from "./features/socket/socketSlice";
 import { updatePost } from "./features/post/postSlice";
-import {
-  userSelector
-} from "./features/user/userSlice";
+import { userSelector } from "./features/user/userSlice";
 
 function SocketClient() {
   const { responseData } = useSelector(authSelector);
@@ -90,12 +89,7 @@ function SocketClient() {
 
   useEffect(() => {
     socket.on("unfollow_to_client", (userId, removeFollowing) => {
-      // console.log({ userId, removeFollowing });
-
-      // const user = users.find((user) => user._id === userId);
       const user = { ...responseData.user };
-
-      // console.log(user);
       const newData = {
         ...user,
         followers: user.followers.filter(
@@ -123,6 +117,16 @@ function SocketClient() {
       dispatch(rtDeleteNotify(msg));
     });
     return () => socket.off("delete_notify_to_client");
+  }, [socket, dispatch]);
+
+  // send message
+
+  useEffect(() => {
+    socket.on("send_message_to_client", (msg) => {
+      console.log(msg);
+      dispatch(addMessage(msg));
+    });
+    return () => socket.off("send_message_to_client");
   }, [socket, dispatch]);
 
   return <></>;

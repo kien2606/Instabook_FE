@@ -1,15 +1,29 @@
+import React, { useEffect } from "react";
+import {
+  getConversation,
+  messageSelector,
+} from "../../features/message/messageSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+import ContactFieldUser from "./ContactFieldUser";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import React from "react";
 import { authSelector } from "../../features/auth/authSlice";
-import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 function ContactField({ setOpenSearch, users }) {
   const { responseData } = useSelector(authSelector);
-  const history = useHistory();
+  const messageState = useSelector(messageSelector);
+  const { id } = useParams();
+
   const handleOpenSearch = () => {
     setOpenSearch(true);
   };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (messageState.firstLoad) return;
+    dispatch(getConversation({ responseData }));
+  }, [responseData, dispatch, messageState.firstLoad]);
+
   return (
     <div className="contact_field">
       <div className="new_message">
@@ -21,28 +35,7 @@ function ContactField({ setOpenSearch, users }) {
       </div>
       <div className="list_message_user">
         {users.map((user, index) => {
-          return (
-            <div
-              className="user_card user_message"
-              key={index}
-              onClick={() => {
-                history.push(`/message/${user._id}`);
-              }}
-            >
-              <div className="user_card_left">
-                <img
-                  src={user.avatar}
-                  alt={user.username}
-                  className={"big_avatar"}
-                />
-                <div className="user_card_info">
-                  {/* <Link to={`/profile/${user._id}`}>{user.username}</Link> */}
-                  <p>{user.username}</p>
-                  <p>{user.fullname}</p>
-                </div>
-              </div>
-            </div>
-          );
+          return <ContactFieldUser key={index} user={user} id={id} />;
         })}
       </div>
     </div>

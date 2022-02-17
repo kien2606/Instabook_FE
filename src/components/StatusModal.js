@@ -91,6 +91,7 @@ function StatusModal() {
     }
     setContent("");
     setImages([]);
+    setStream(false);
     if (tracks) tracks.stop();
   };
 

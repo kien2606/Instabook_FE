@@ -22,6 +22,8 @@ function SearchNew({ setOpenSearch, onSubmitSearch, users, addUser }) {
     setValue("");
     addUser(user);
   };
+
+
   return (
     <div className="search_new">
       <div className="model_search">

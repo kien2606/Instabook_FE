@@ -44,11 +44,17 @@ export default function Icons({ setContent, content }) {
   };
   return (
     <React.Fragment>
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          textAlign: "center",
+        }}
+      >
         <Button
           onClick={handleClick}
           size="small"
-          sx={{ ml: 2, fontSize: "18px", justifyContent: "flex-end" }}
+          sx={{ ml: 2, fontSize: "18px", justifyContent: "center"  }}
           aria-controls={open ? "account-menu" : undefined}
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
